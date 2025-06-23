@@ -1,0 +1,246 @@
+/* contact.css */
+
+/* RESET */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: 'Verdana', sans-serif;
+  background-color: #09130a;
+  color: #91be50;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #7db242;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+a:hover, a:focus {
+  color: #a8e65c;
+  outline: none;
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 20px 28px 70px;
+}
+
+.flex-center-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@keyframes slideDownFade {
+  from {opacity:0; transform: translateY(-20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInFooter {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.slide-in {
+  animation: slideDownFade 1s ease forwards;
+}
+.fade-in-footer {
+  animation: fadeInFooter 2s ease forwards;
+}
+
+/* HEADER */
+header {
+  background-color: #23480e;
+  padding: 22px 40px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 10px 28px rgb(12 35 6 / 0.7);
+  z-index: 100;
+}
+
+.logo a {
+  font-size: 1.95rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: 'Arial Black', Arial, sans-serif;
+  color: #b5db87;
+  user-select: none;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+}
+
+nav a {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 9px 14px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #9ec468;
+  box-shadow: inset 0 0 0 0 transparent;
+  transition: box-shadow 0.3s ease, color 0.3s ease;
+  user-select: none;
+  white-space: nowrap;
+  text-align: center;
+}
+
+nav a.active,
+nav a:hover, nav a:focus {
+  box-shadow: inset 0 -38px 0 0 #9ec468;
+  color: #1c3f05;
+  outline: none;
+  font-weight: 700;
+}
+
+/* MAIN */
+main {
+  flex: 1;
+  padding: 56px 0 90px;
+  animation: fadeInUp 1.6s ease forwards;
+}
+
+/* Heading */
+h2 {
+  font-weight: 900;
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 42px;
+  color: #9ace5d;
+  letter-spacing: 1.6px;
+  font-family: 'Candara', sans-serif;
+  text-shadow: 0 0 3px #4b720f73;
+}
+
+/* Contact info */
+.contact-info {
+  user-select: none;
+  margin-bottom: 34px;
+}
+.contact-info p {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #b4d37c;
+}
+.contact-info strong {
+  color: #8bb239;
+}
+
+/* Form */
+form {
+  background-color: #1c3510;
+  border-radius: 24px;
+  padding: 34px 32px;
+  box-shadow: inset 0 0 22px 3px #5b813510;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #abc76d;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1.8px solid #5c7b34;
+  font-size: 1rem;
+  color: #d8e7b9;
+  background-color: #162409;
+  margin-bottom: 26px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #a8d927;
+  box-shadow: 0 0 13px #b5f9538f;
+}
+
+.btn.cta {
+  background-color: #588722;
+  color: #e8f6cf;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 14px 40px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: block;
+  margin: 0 auto;
+  letter-spacing: 0.9px;
+}
+
+.btn.cta:hover,
+.btn.cta:focus {
+  background-color: #35640c;
+  outline: none;
+}
+
+/* Form status message */
+#form-status {
+  font-weight: 700;
+  text-align: center;
+  margin-top: 28px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  user-select: text;
+}
+
+/* Footer */
+footer {
+  background-color: #23480d;
+  color: #a5cc76;
+  padding: 28px 40px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  box-shadow: inset 0 7px 22px #13210b;
+  user-select: none;
+  animation: fadeInFooter 2s ease forwards;
+}
+footer p:first-child {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+footer p:last-child {
+  font-style: italic;
+  font-size: 0.9rem;
+  opacity: 0.78;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav {
+    gap: 12px;
+  }
+  nav a {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+  h2 {
+    font-size: 2.3rem;
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - DXN Wellness</title>
+  <link rel="stylesheet" href="checkout.css" />
+  <link rel="stylesheet" href="stying.css">
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <h1 class="logo"><a href="index.html" aria-label="DXN Wellness Home">DXN Wellness</a></h1>
+    </div>
+    <nav role="navigation" aria-label="Primary Navigation">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="refund-shipping.html">Refunds & Shipping</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="checkout-container" role="main">
+    <h1>Order Details & Payment</h1>
+    <form id="checkoutForm" novalidate>
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="name">Full Name <span aria-label="required">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+
+        <label for="email">Email Address <span aria-label="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+
+        <label for="phone">Contact Number <span aria-label="required">*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required pattern="^\+?[0-9\s\-]{7,15}$" autocomplete="tel" />
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Shipping Address</legend>
+
+        <label for="address1">Address Line 1 <span aria-label="required">*</span></label>
+        <input type="text" id="address1" name="address1" placeholder="Street address, P.O. box" required autocomplete="address-line1" />
+
+        <label for="address2">Address Line 2</label>
+        <input type="text" id="address2" name="address2" placeholder="Apartment, suite, unit, building, floor, etc." autocomplete="address-line2" />
+
+        <label for="city">City <span aria-label="required">*</span></label>
+        <input type="text" id="city" name="city" placeholder="City" required autocomplete="address-level2" />
+
+        <label for="state">State/Province <span aria-label="required">*</span></label>
+        <input type="text" id="state" name="state" placeholder="State or Province" required autocomplete="address-level1" />
+
+        <label for="zip">Postal/ZIP Code <span aria-label="required">*</span></label>
+        <input type="text" id="zip" name="zip" placeholder="Postal or ZIP code" required autocomplete="postal-code" />
+
+        <label for="country">Country <span aria-label="required">*</span></label>
+        <select id="country" name="country" required autocomplete="country">
+          <option value="" disabled selected>Select your country</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Canada">Canada</option>
+          <option value="Australia">Australia</option>
+          <option value="Other">Other</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Order Notes</legend>
+        <label for="notes">Additional Instructions</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Any special instructions or requests"></textarea>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit" id="payBtn">Pay Now</button>
+      </div>
+    </form>
+    <div id="formMessage" role="alert" aria-live="polite" class="hidden"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 DXN Wellness. All rights reserved.</p>
+    <p>Created by Bharat Garg</p>
+  </footer>
+
+  <!-- Razorpay checkout script -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

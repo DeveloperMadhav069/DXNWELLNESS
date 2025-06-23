@@ -1,0 +1,175 @@
+/* Reset & base */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1e0d;
+  color: #b4e197;
+  min-height: 100vh;
+  line-height: 1.6;
+  padding-bottom: 40px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header and nav same style as above omitted for brevity; reuse your header/nav CSS */
+
+/* Main container */
+.checkout-container {
+  max-width: 720px;
+  margin: 36px auto;
+  background-color: #1a351a;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px #2b4f25dd;
+  padding: 32px 40px;
+  color: #cee8aa;
+  box-sizing: border-box;
+}
+.checkout-container h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin-bottom: 28px;
+  color: #a4d57a;
+  text-shadow: 1px 1px 3px #2f650e;
+}
+
+/* Form styling */
+form fieldset {
+  border: 1px solid #426b24;
+  padding: 24px 28px 30px 28px;
+  margin-bottom: 24px;
+  border-radius: 16px;
+}
+form legend {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+  color: #d1e49b;
+  text-shadow: 0 1px 1px #375514;
+}
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #cbe2aa;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+  width: 100%;
+  background-color: #2d4c16;
+  border: none;
+  border-radius: 12px;
+  color: #d7f1a3;
+  font-size: 1.1rem;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  transition: background-color 0.3s ease;
+}
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form select:focus,
+form textarea:focus {
+  background-color: #446d2a;
+  outline:none;
+  box-shadow: 0 0 10px 3px #70b256aa;
+}
+form textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+.form-actions {
+  text-align: center;
+}
+button#payBtn {
+  background-color: #70b256;
+  color: #e8f6e5;
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 14px 50px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 18px 4px #70b256cc;
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+button#payBtn:hover,
+button#payBtn:focus {
+  background-color: #9acf70;
+  box-shadow: 0 0 28px 6px #9acf70cc;
+  outline: none;
+}
+
+/* Form message */
+#formMessage {
+  margin-top: 24px;
+  font-size: 1.1rem;
+  color: #e06363;
+}
+.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .checkout-container {
+    margin: 30px 20px;
+    padding: 28px 24px;
+  }
+  .checkout-container h1 {
+    font-size: 2.2rem;
+  }
+  form fieldset {
+    padding: 20px 24px 26px 24px;
+  }
+  form label {
+    font-size: 1rem;
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form select,
+  form textarea {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+  button#payBtn {
+    font-size: 1.1rem;
+    padding: 12px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkout-container {
+    margin: 25px 12px;
+    padding: 24px 18px;
+  }
+  .checkout-container h1 {
+    font-size: 1.9rem;
+  }
+  form fieldset {
+    padding: 18px 20px 22px 20px;
+  }
+  form label {
+    font-size: 0.95rem;
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form select,
+  form textarea {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+  button#payBtn {
+    font-size: 1rem;
+    padding: 10px 32px;
+  }
+}

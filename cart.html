@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart - DXN Wellness</title>
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <h1 class="logo"><a href="index.html" aria-label="DXN Wellness Home">DXN Wellness</a></h1>
+    </div>
+    <nav role="navigation" aria-label="Primary Navigation">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="cart.html" class="active" aria-current="page">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="refund-shipping.html">Refunds & Shipping</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="cart-container" role="main">
+    <h1>Your Cart</h1>
+
+    <table class="cart-table" aria-label="Shopping Cart Contents" id="cartTable" role="table" >
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price (₹)</th>
+          <th scope="col">Total (₹)</th>
+          <th scope="col" class="remove-col">Remove</th>
+        </tr>
+      </thead>
+      <tbody id="cartBody">
+        <!-- Dynamically filled -->
+      </tbody>
+    </table>
+
+    <div class="summary" aria-live="polite" aria-atomic="true" role="region" tabindex="-1">
+      <p><strong>Subtotal:</strong> ₹<span id="subtotal">0</span></p>
+      <p><strong>Delivery Charges:</strong> ₹<span id="deliveryCharges">0</span></p>
+      <p class="grand-total"><strong>Grand Total:</strong> ₹<span id="grandTotal">0</span></p>
+    </div>
+
+    <div class="buy-all-container">
+      <button id="buyAllBtn" disabled aria-label="Buy all items in cart">Buy All Items</button>
+    </div>
+  </main>
+
+  <aside class="delivery-info-box" aria-label="Delivery Charges Calculation Information">
+    <h2>Delivery Charges System</h2>
+    <ul>
+      <li>Order &lt; ₹2000: Delivery Charge ₹100</li>
+      <li>₹2000 ≤ Order &lt; ₹4000: Delivery Charge ₹75</li>
+      <li>₹4000 ≤ Order &lt; ₹6000: Delivery Charge ₹50</li>
+      <li>Order ≥ ₹6000: No Delivery Charges</li>
+    </ul>
+  </aside>
+
+  <footer>
+    <p>&copy; DXN Wellness. All rights reserved.</p>
+    <p>Created by Madhav Mehra</p>
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>
