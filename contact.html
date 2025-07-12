@@ -1,5 +1,6 @@
+<!-- HTML part (no change in structure except ID match & script order) -->
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,14 +8,14 @@
   <meta name="keywords" content="dxn, contact, wellness, bharatgarg, facebook, youtube" />
   <title>Contact Us - DXN Wellness</title>
   <link rel="stylesheet" href="contact.css" />
-  <link rel="stylesheet" href="stying.css">
+  <link rel="stylesheet" href="stying.css" />
 </head>
 <body>
 <header>
   <div class="header-top">
-    <h1 class="logo"><a href="index.html" aria-label="DXN Wellness Home">DXN Wellness</a></h1>
+    <h1 class="logo"><a href="index.html">DXN Wellness</a></h1>
   </div>
-  <nav role="navigation" aria-label="Primary Navigation">
+  <nav>
     <div class="nav-container">
       <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
@@ -32,13 +33,13 @@
 
 <main class="container" id="join">
   <h2>Contact Us</h2>
-  <section class="contact-info" aria-label="Contact information">
+  <section class="contact-info">
     <p><strong>Phone:</strong> +91 9412217510</p>
-    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/15kaFk3Cik/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" tabindex="0">Bharat Garg DXN</a></p>
-    <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@bharatgarg8240" target="_blank" rel="noopener noreferrer" tabindex="0">Bharat Garg DXN Youtube</a></p>
+    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/15kaFk3Cik/?mibextid=wwXIfr" target="_blank">Bharat Garg DXN</a></p>
+    <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@bharatgarg8240" target="_blank">Bharat Garg DXN Youtube</a></p>
   </section>
 
-  <section aria-label="Contact form">
+  <section>
     <form id="contact-form" novalidate>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required placeholder="Your full name" />
@@ -52,7 +53,7 @@
       <label for="message">Message:</label>
       <textarea id="message" name="message" rows="5" required placeholder="Your message here"></textarea>
 
-      <button class="btn cta" type="submit" aria-label="Send message via contact form">Send Message</button>
+      <button class="btn cta" type="submit">Send Message</button>
     </form>
 
     <p id="form-status" role="alert" aria-live="assertive"></p>
@@ -66,12 +67,17 @@
   </div>
 </footer>
 
+<!-- EmailJS SDK must load before your script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- EmailJS Initialization -->
 <script>
-  (function(){
-    emailjs.init('dpFBF92yBEf02Bd6I'); // Replace with your EmailJS user ID
+  (function () {
+    emailjs.init('dpFBF92yBEf02Bd6I'); // Replace with your actual EmailJS public key
   })();
 </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="contactus.js"></script>
+
+<!-- Main Script -->
+<script src="contactus.js"></script>
 </body>
 </html>
