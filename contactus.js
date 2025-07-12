@@ -1,20 +1,16 @@
+document.getElementById('contact-form').addEventListener('submit', function (event) {
+    event.preventDefault();
 
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Validate the email address
     if (!validateEmail(email)) {
         alert('Please enter a valid email address.');
         return;
     }
 
-    // Send the actual message through EmailJS
     emailjs.send("service_ev5htjk", "template_d3qj72d", {
         name: name,
         email: email,
@@ -23,18 +19,17 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     })
     .then(function (response) {
         console.log('Message sent successfully!', response);
-        document.getElementById('responseMessage').innerText = 'Message sent successfully!';
+        document.getElementById('form-status').innerText = '✅ Message sent successfully!';
     })
     .catch(function (error) {
         console.error('Failed to send message', error);
-        document.getElementById('responseMessage').innerText = 'Failed to send message. Please try again.';
+        document.getElementById('form-status').innerText = '❌ Failed to send message. Please try again.';
     });
 
-    // Optionally reset the form after submission
-    document.getElementById('contactForm').reset();
+    document.getElementById('contact-form').reset();
 });
 
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()\[\]\\.,;:\s@"]+\.)+[^<>()\[\]\\.,;:\s@"]{2,})$/i;
-    return re.test(String(email).toLowerCase());
+    return re.test(email.toLowerCase());
 }
