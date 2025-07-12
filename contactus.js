@@ -7,6 +7,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
 
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
     const message = document.getElementById('message').value;
 
     // Validate the email address
@@ -19,6 +20,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     emailjs.send("service_ev5htjk", "template_d3qj72d", {
         name: name,
         email: email,
+        phone: phone,
         message: message
     })
     .then(function (response) {
